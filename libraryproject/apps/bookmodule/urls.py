@@ -10,6 +10,12 @@ urlpatterns = [
     path('aboutus/', views.aboutus, name="books.aboutus"),
     path('html5/links', views.links, name='books.links'),
     path('html5/Text/formatting', views.Text, name='books.Text'),
+    path('html5/listing', views.listing, name='books.listing'),
+    path('html5/tables', views.tables, name='books.tables'),
+
+
+    
+
 
 
 #     path('', views.index), Text formatters 

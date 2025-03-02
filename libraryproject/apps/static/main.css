@@ -22,7 +22,45 @@ a:active {
 
 h1 {
     padding: 10px;
-    color: rgb(43, 255, 0);
+    color: rgb(44, 152, 75);
+    background-color: rgb(198, 206, 198);
+    text-decoration: none;
+}
+.Listing-heading {
+    padding: 10px;
+    color: rgb(62, 66, 65);
     background-color: rgb(225, 230, 225);
     text-decoration: none;
 }
+.t2{
+    padding: 10px;
+    color: rgb(95, 150, 136);
+    background-color: rgb(225, 230, 225);
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: square;
+}
+
+li {
+    margin: 5px 0;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: lightgray;
+}
+
