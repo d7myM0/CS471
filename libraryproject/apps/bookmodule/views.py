@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
+from apps.bookmodule.models import Book
 
 
 def index(request): 
@@ -14,6 +15,20 @@ def index2(request, val1 = 0):
     return HttpResponse("value1 = "+str(val1)) 
 
 
+mybook = Book(title = 'Continuous Delivery', author = 'J.Humble and D. Farley', edition = 1) 
+mybook.save() 
+mybook = Book.objects.create(title = 'Continuous Delivery', author = 'J.Humble and D. Farley', edition = 1) 
+
+def simple_query(request): 
+    mybooks=Book.objects.filter(title__icontains='and') # <- multiple objects 
+    return render(request, 'bookmodule/bookList.html', {'books':mybooks}) 
+
+def complex_query(request): 
+    mybooks=books=Book.objects.filter(author__isnull = False).filter(title__icontains='and').filter(edition__gte = 2).exclude(price__lte = 100)[:10] 
+    if len(mybooks)>=1: 
+        return render(request, 'bookmodule/bookList.html', {'books':mybooks}) 
+    else: 
+        return render(request, 'bookmodule/index.html') 
 
 def viewbook(request, bookId):
     book1 = {'id': 123, 'title': 'Continuous Delivery', 'author': 'J. Humble'}

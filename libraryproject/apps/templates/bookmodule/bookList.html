@@ -1,14 +1,16 @@
 {% extends "layouts/base.html" %}
 {% load static %}
+
 {% block title %} Book List {% endblock title %}
 
 {% block content %}
 <h1>Search Results</h1>
 <ul>
-    {% for book in books %}
+    {% for obj in books %}
     <li>
-        <strong>{{ book.title }}</strong> by {{ book.author }} (ID: {{ book.id }})
+        <strong>{{ obj.title }}</strong> by {{ obj.author }} (ID: {{ obj.id }})
     </li>
+    <hr>
     {% endfor %}
 </ul>
 {% endblock content %}
