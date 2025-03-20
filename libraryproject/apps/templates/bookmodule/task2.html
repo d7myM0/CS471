@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Books with Edition > 3 and Title/Author Contains 'co' {% endblock title %}
+
+{% block content %}
+<h1>Books with Edition > 3 and Title/Author Contains 'co'</h1>
+<ul>
+    {% for book in books %}
+    <li>
+        <strong>{{ book.title }}</strong> by {{ book.author }} (Edition: {{ book.edition }})
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

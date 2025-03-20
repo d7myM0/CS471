@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Books with Price ≤ 80 {% endblock title %}
+
+{% block content %}
+<h1>Books with Price ≤ 80</h1>
+<ul>
+    {% for book in books %}
+    <li>
+        <strong>{{ book.title }}</strong> by {{ book.author }} (Price: {{ book.price }})
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
