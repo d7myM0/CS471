@@ -1,0 +1,9 @@
+{% for book in books %}
+    <li>
+        <strong>{{ book.title }}</strong> - {{ book.author }} - Price: {{ book.price }} - Edition: {{ book.edition }}
+        <br>
+        <a href="{% url 'books.editbook' book.id %}">Edit</a> |
+        <a href="{% url 'books.deletebook' book.id %}">Delete</a>
+    </li>
+    <hr>
+{% endfor %}
